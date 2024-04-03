@@ -9,7 +9,7 @@ async function genToken(req, res, next) {
     res.header("x-operator-token", token).send(true + "\n" + token);
     next();
   } catch (err) {
-    res.send(err.message + "\ngeneratsiyadagi xato");
+    console.log(err.message + "\n error of generate in operator");
   }
 }
 

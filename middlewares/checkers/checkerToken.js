@@ -1,10 +1,7 @@
 const jwt = require("jsonwebtoken");
 async function checkerToken(req, res, next) {
   const token = req.header("x-admin-token");
-  if (!token)
-    return res
-      .status(400)
-      .send("Mavjud bo'lmagan token orqali kirish mumkin emas!!!");
+  if (!token) return res.status(400).send("token not Found!!!");
   try {
     const decoded = jwt.verify(token, req.body.password);
     req.user = decoded;

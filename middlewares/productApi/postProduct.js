@@ -13,12 +13,12 @@ module.exports = async (req, res, next) => {
     if (returnArr.length > 0)
       return res
         .status(400)
-        .send("Siz qo'shayotgan product Dateabaseda mavjud!!!");
+        .send("The product you are adding is available in Database!!!");
 
     const saved = await addProduct(req.body);
-    res.status(200).send("Muvaffaqqiyatli product qo'shish\n" + saved);
+    res.status(200).send("Successfully add a product\n" + saved);
     next();
   } catch (er) {
-    return res.status(400).send("Xatolik yuz berdi");
+    return res.status(400).send("Error");
   }
 };

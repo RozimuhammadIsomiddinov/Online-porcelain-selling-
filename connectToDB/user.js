@@ -4,10 +4,10 @@ const Joi = require("joi");
 mongoose
   .connect("mongodb://localhost/Porcelain")
   .then(() => {
-    console.log(`Mongodbga ulanish hosil qilindi\tUser uchun`);
+    console.log(`Created connection to mongodb\t for users`);
   })
   .catch((err) => {
-    console.log("ulanishda xatolik yuz berdi");
+    console.log("a connection error in users");
   });
 
 const userSchema = new mongoose.Schema({

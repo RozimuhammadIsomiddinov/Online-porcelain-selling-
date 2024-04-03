@@ -5,10 +5,10 @@ const getSalt = require("../hash");
 mongoose
   .connect("mongodb://localhost/Porcelain")
   .then(() => {
-    console.log(`Mongodbga ulanish hosil qilindi\tAdmin uchun`);
+    console.log(`Created connection to mongodb\t for Admin`);
   })
   .catch((err) => {
-    console.log("ulanishda xatolik yuz berdi");
+    console.log("a connection error in admin");
   });
 const adminSchema = new mongoose.Schema({
   admin: {

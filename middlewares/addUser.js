@@ -8,7 +8,9 @@ async function addUsers(req, res, next) {
 
     const product = await finderProSub(req.body.subjectName);
     if (product.length == 0)
-      return res.status(400).send("siz qidirgan mahsulot mavjud emas");
+      return res
+        .status(400)
+        .send("The product you are looking for is not available");
 
     const newUser = await addUser(req.body);
     res.send(newUser);

@@ -16,7 +16,7 @@ async function checkerOperator(req, res, next) {
     if (returned.length == 0)
       return res
         .status(404)
-        .send("Siz operator emassiz va So'rov amalga oshira olmaysiz");
+        .send("You are not an operator and can't make a Request");
 
     const isValid = await bcrypt.compare(newPassword, returned[0].password);
     if (!isValid)

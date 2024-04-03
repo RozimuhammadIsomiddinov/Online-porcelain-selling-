@@ -12,10 +12,10 @@ async function addOperators(req, res, next) {
 
     const returnOperator = await finderOperator(req.body.login);
     if (returnOperator.length > 0)
-      return res.status(404).send("Afsuski ushbu operator Databaseda mavjud");
+      return res.status(404).send("this operator is available in Database");
 
     const newAwait = await newOperator(req.body);
-    res.send("Muvaffaqqiyatli OPerator qo'shish\n" + newAwait);
+    res.send("Successfully added Operator\n" + newAwait);
     next();
   } catch (er) {
     return res.status(500).send(er.message);

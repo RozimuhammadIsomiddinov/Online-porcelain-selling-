@@ -19,7 +19,7 @@ async function checker(req, res, next) {
     if (!returned.admin)
       return res
         .status(400)
-        .send("Siz admin emassiz va bu malumotlarni ko'rolmaysiz");
+        .send("You are not an admin and can't see this information");
 
     next();
   } catch (err) {
